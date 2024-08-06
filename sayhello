@@ -1,0 +1,16 @@
+#!/bin/bash
+#Written by 5bitcube
+
+msg="Say hello to deez nuts"
+
+if [ "$1" == "-w" ]; then
+    x-terminal-emulator -e /bin/bash -c "echo '$msg from a new window!'; read -p 'Press Enter to exit...'"
+elif [ "$1" == "-c" ]; then
+	x-terminal-emulator -e /bin/bash -c "echo '$msg from a cron job!'; sleep 3; exit"
+elif [ -e "$1" ]; then
+	x-terminal-emulator -e /bin/bash -c "echo '$msg from $1'; read -p 'Press Enter to exit...'" 
+elif [ "$2" == "-f" ]; then
+	x-terminal-emulator -e /bin/bash -c "echo '$msg from a bunch of places at once!'; read -p 'Press Enter to exit...'"
+else
+    echo "$msg! HA! GOT EM!"
+fi

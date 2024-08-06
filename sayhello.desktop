@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;all/allfiles;
+Actions=sayhello;
+Encoding=UTF-8
+
+[Desktop Action sayhello]
+Name=Say Hello
+Exec=x-terminal-emulator -e /bin/bash -c "sayhello '%F' -f"
